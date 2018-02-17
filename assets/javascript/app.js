@@ -42,11 +42,39 @@ var questions = [
   }
 ];
 
-
 $.each(questions, function(x, y) {
-  console.log(questions[x].question);
+  var questionDiv = $("<div>");
+  questionDiv.attr("id", "question" + x);
+ 
+  var questionP = $("<p>"); 
+  questionP.attr("class", "question");
+  questionDiv.append(questionP);
+  
+  questionP.append(questions[x].question);
+
+  var optionsUl = $("<ul>");
+  optionsUl.attr("class", "options");
+
   $.each(questions[x].options, function(i, j) {
-    console.log(j);
+    var li = $("<li>");
+    optionsUl.append(li);
+    questionDiv.append(optionsUl);
+
+    var optionsInput = $("<input>");
+    optionsInput.attr({type: "radio", name: "quest" + x, value: j});
+    li.append(optionsInput);
+    li.append(j);
   })
-  console.log("-----------------");
+  $("form").append(questionDiv);
 });
+
+
+
+
+
+
+
+
+
+
+
