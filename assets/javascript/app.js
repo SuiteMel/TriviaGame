@@ -87,6 +87,8 @@ function createQ() {
   var timer = $("<div>");
   timer.attr("id", "timer");
   $("#content").html(timer);
+  var converted = timeConverter(number);
+  $("#timer").text(converted);
   runTimer();
 
   var questionsDiv = $("<div>");
@@ -173,14 +175,6 @@ function submitQ() {
   resultsDiv.append(message, correctAns, wrongAns, unAns);
 
   $("#content").html(resultsDiv);
-  
-  //Ask about .map vs .each
-  // $.each(questions, function(x, y) {
-  //   var ans = radioButton.map(function(){
-  //     return $(this).val();
-  //   }).get();
-  //   console.log("Ans: " + ans);
-  // });
 }
 
 
