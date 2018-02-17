@@ -1,6 +1,5 @@
 window.onload = function () {
   $("#start").on("click", createQ);
- //$("#submit").on("click", submitQ);
 }
 
 var questions = [
@@ -131,8 +130,6 @@ function createQ() {
   $("#submit").on("click", submitQ);
 }
 
-//createQ();
-
 function submitQ() {
   var answers = [];
   $.each(questions, function (x, y) {
@@ -185,10 +182,6 @@ function submitQ() {
   //   console.log("Ans: " + ans);
   // });
 }
-
-
-//Add timer
-//Add some css this time!!!
 
 
 
